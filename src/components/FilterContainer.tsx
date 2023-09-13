@@ -1,11 +1,11 @@
 import { colors } from '@/constants/colors';
 
-interface ButtonWrapProps {
+interface FilterContainerProps {
   filter: string;
   setFilter: any;
 }
 
-const ButtonWrap = ({ filter, setFilter }: ButtonWrapProps) => {
+const FilterContainer = ({ filter, setFilter }: FilterContainerProps) => {
   const handlerClickFilter = (region: string) => {
     setFilter(region);
   };
@@ -45,4 +45,4 @@ const ButtonWrap = ({ filter, setFilter }: ButtonWrapProps) => {
   );
 };
 
-export default ButtonWrap;
+export default FilterContainer;

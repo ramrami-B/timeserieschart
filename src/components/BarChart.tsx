@@ -1,11 +1,19 @@
 import { data } from '@/utils/ChartData';
 import Bar from './Bar';
 
-const BarChart = () => {
+interface BarChartProps {
+  filter: string;
+}
+
+const BarChart = ({ filter }: BarChartProps) => {
   return (
     <>
       {data.get().map((ele, idx) => {
-        return <Bar key={idx} idx={idx} ele={ele} />;
+        return ele.id === filter ? (
+          <Bar key={idx} idx={idx} ele={ele} highlight={true}/>
+        ) : (
+          <Bar key={idx} idx={idx} ele={ele}  highlight={false}/>
+        );
       })}
     </>
   );

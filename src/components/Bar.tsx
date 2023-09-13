@@ -6,13 +6,14 @@ import { data } from '@/utils/ChartData';
 interface BarProps {
   idx: number;
   ele: DataType;
+  highlight: boolean;
 }
 
-const Bar = ({ idx, ele }: BarProps) => {
+const Bar = ({ idx, highlight }: BarProps) => {
   const [viewwWidth, viewHeight, eleWidth] = useViewSize();
 
   const barHeight =
-    ((viewHeight * 0.8) / data.getBarMaxValue()) * ele.value_bar;
+    ((viewHeight * 0.8) / data.getBarMaxValue()) * data.get()[idx].value_bar;
 
   return (
     <>
@@ -21,12 +22,12 @@ const Bar = ({ idx, ele }: BarProps) => {
         y={viewHeight * 0.8 - barHeight}
         width={eleWidth}
         height={barHeight}
-        fill={colors.light}
+        fill={highlight ? colors.point : colors.light}
       />
-      <title>{`id: ${ele.id}\nvalue_area: ${ele.value_area}\nvalue_bar: ${ele.value_bar}`}</title>
+      <title>{`id: ${data.get()[idx].id}\nvalue_area: ${data.get()[idx].value_area}\nvalue_bar: ${data.get()[idx].value_bar}`}</title>
       <style jsx>{`
         rect:hover {
-          fill: ${colors.point};
+          fill-opacity: 0.5;
         }
       `}</style>
     </>

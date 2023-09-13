@@ -2,10 +2,7 @@
 import AreaChart from '@/components/AreaChart';
 import BarChart from '@/components/BarChart';
 import YAxis from '@/components/YAxis';
-import { areaYAxis, barYAxis } from '@/constants/axis';
 import { colors } from '@/constants/colors';
-import useViewSize from '@/hooks/useViewSize';
-import { data } from '@/utils/ChartData';
 import { useState } from 'react';
 
 export default function Home() {
@@ -37,22 +34,6 @@ export default function Home() {
         </div>
 
         <YAxis isLeft={false} />
-        {/* <div className="y-axios-area">
-          {areaYAxis.map((axios, idx) => (
-            <div key={idx} style={{ display: 'flex', justifyContent: 'start' }}>
-              <svg width="10" fill="none">
-                <line
-                  x1="0"
-                  y1={(viewHeight * 0.4) / data.getAreaMaxValue() - 1}
-                  x2="10"
-                  y2={(viewHeight * 0.4) / data.getAreaMaxValue() - 1}
-                  stroke="black"
-                />
-              </svg>
-              <p>{axios}</p>
-            </div>
-          ))}
-        </div> */}
       </div>
 
       <style jsx>{`

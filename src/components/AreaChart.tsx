@@ -1,6 +1,5 @@
 import { colors } from '@/constants/colors';
 import getAreaPoints from '@/utils/getAreaPoints';
-import { displayPartsToString } from 'typescript';
 
 const AreaChart = () => {
   const points = getAreaPoints();

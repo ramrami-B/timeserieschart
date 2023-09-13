@@ -1,4 +1,5 @@
 'use client';
+import { data } from '@/utils/ChartData';
 import { useEffect, useState } from 'react';
 
 const useViewSize = () => {
@@ -10,7 +11,9 @@ const useViewSize = () => {
     setViewHeight(window.innerHeight);
   }, []);
 
-  return [viewwWidth, viewHeight];
+  const eleWidth = (viewwWidth * 0.9 - data.getLength()) / data.getLength();
+
+  return [viewwWidth, viewHeight, eleWidth];
 };
 
 export default useViewSize;

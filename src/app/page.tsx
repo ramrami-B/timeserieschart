@@ -1,4 +1,5 @@
 'use client';
+import AreaChart from '@/components/AreaChart';
 import BarChart from '@/components/BarChart';
 
 export default function Home() {
@@ -6,7 +7,10 @@ export default function Home() {
     <main className="main">
       <h1>📈 My Time Series Chart 📈</h1>
       <div className="table">
-        <BarChart />
+        <svg width="100%" height="100%">
+          <BarChart />
+          <AreaChart />
+        </svg>
       </div>
       <style jsx>{`
         .main {

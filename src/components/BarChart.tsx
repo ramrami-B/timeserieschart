@@ -1,6 +1,5 @@
 import { data } from '@/utils/ChartData';
 import Bar from './Bar';
-import { useState } from 'react';
 
 interface BarChartProps {
   filter: string;

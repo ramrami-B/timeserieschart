@@ -4,12 +4,6 @@ const dataObj = require('../../public/data/data.json');
 const dataList: DataType[] = Object.values(dataObj);
 
 class ChartData {
-  // filter;
-
-  // constructor(filter: string) {
-  //   this.filter = filter;
-  // }
-
   get() {
     return dataList
   }

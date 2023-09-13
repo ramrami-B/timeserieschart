@@ -1,5 +1,5 @@
-import AreaChart from '@/components/AreaChart';
-import BarChart from '@/components/BarChart';
+import AreaChart from '@/components/area/AreaChart';
+import BarChart from '@/components/bar/BarChart';
 import YAxis from './YAxis';
 import { colors } from '@/constants/colors';
 

@@ -14,6 +14,7 @@ const AreaChart = () => {
         const cy = point.split(',')[1];
         return (
           <circle
+            key={idx}
             cx={cx}
             cy={cy}
             r="5"

@@ -1,5 +1,6 @@
 import { chartData } from '@/utils/ChartData';
 import Bar from './Bar';
+import { DataType } from '@/@types/DataType';
 
 interface BarChartProps {
   filter: string;
@@ -8,11 +9,11 @@ interface BarChartProps {
 const BarChart = ({ filter }: BarChartProps) => {
   return (
     <>
-      {chartData.get().map((ele, idx) => {
-        return ele.id === filter ? (
-          <Bar key={idx} idx={idx} highlight={true} />
+      {chartData.get().map((obj: DataType, idx: number) => {
+        return obj.id === filter ? (
+          <Bar key={idx} idx={idx} obj={obj} highlight={true} />
         ) : (
-          <Bar key={idx} idx={idx} highlight={false} />
+          <Bar key={idx} idx={idx} obj={obj} highlight={false} />
         );
       })}
     </>

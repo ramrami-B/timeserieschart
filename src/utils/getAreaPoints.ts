@@ -8,7 +8,7 @@ const getAreaPoints = () => {
 
   chartData.get().forEach((ele, idx) => {
     const areaHeight =
-      ((viewHeight * 0.4) / chartData.getAreaMaxValue()) * ele.value_area;
+      ((viewHeight * 0.4) / chartData.getMaxValueArea()) * ele.value_area;
     const x = idx + eleWidth / 2 + idx * eleWidth;
     const y = viewHeight * 0.8 - areaHeight;
 

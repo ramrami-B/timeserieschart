@@ -5,14 +5,14 @@ const dataList: DataType[] = Object.values(dataObj);
 
 export class ChartData {
   get() {
-    return dataList
+    return dataList;
   }
 
   getLength() {
     return dataList.length;
   }
 
-  getBarMaxValue() {
+  getMaxValueBar() {
     let maxValue = -1;
 
     dataList.forEach((data) => {
@@ -24,7 +24,7 @@ export class ChartData {
     return maxValue;
   }
 
-  getAreaMaxValue() {
+  getMaxValueArea() {
     let maxValue = -1;
 
     dataList.forEach((data) => {

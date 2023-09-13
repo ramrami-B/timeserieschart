@@ -9,8 +9,8 @@ interface YAxisProps {
 const YAxis = ({ isLeft }: YAxisProps) => {
   const [viewwWidth, viewHeight] = useViewSize();
   const yCoordinate = isLeft
-    ? ((viewHeight * 0.8) / chartData.getBarMaxValue()) * 1000 - 30
-    : (viewHeight * 0.4) / chartData.getAreaMaxValue() - 1;
+    ? ((viewHeight * 0.8) / chartData.getMaxValueBar()) * 1000 - 30
+    : (viewHeight * 0.4) / chartData.getMaxValueArea() - 1;
 
   const yAxisList = isLeft ? barYAxis : areaYAxis;
 

@@ -1,7 +1,7 @@
 'use client';
+
 import FilterContainer from '@/components/FilterContainer';
 import Chart from '@/components/Chart';
-import { colors } from '@/constants/colors';
 import { useState } from 'react';
 
 export default function Home() {

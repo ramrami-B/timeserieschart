@@ -1,4 +1,5 @@
 'use client';
+
 import { data } from '@/utils/ChartData';
 import { useEffect, useState } from 'react';
 

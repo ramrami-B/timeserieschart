@@ -1,19 +1,18 @@
-import { DataType } from '@/@types/DataType';
 import { colors } from '@/constants/colors';
 import useViewSize from '@/hooks/useViewSize';
-import { data } from '@/utils/ChartData';
+import { chartData } from '@/utils/ChartData';
 
 interface BarProps {
   idx: number;
-  ele: DataType;
   highlight: boolean;
 }
 
 const Bar = ({ idx, highlight }: BarProps) => {
   const [viewwWidth, viewHeight, eleWidth] = useViewSize();
+  const ele = chartData.get()[idx];
 
   const barHeight =
-    ((viewHeight * 0.8) / data.getBarMaxValue()) * data.get()[idx].value_bar;
+    ((viewHeight * 0.8) / chartData.getBarMaxValue()) * ele.value_bar;
 
   return (
     <svg>
@@ -24,7 +23,7 @@ const Bar = ({ idx, highlight }: BarProps) => {
         height={barHeight}
         fill={highlight ? colors.point : colors.light}
       />
-      <title>{`id: ${data.get()[idx].id}\nvalue_area: ${data.get()[idx].value_area}\nvalue_bar: ${data.get()[idx].value_bar}`}</title>
+      <title>{`id: ${ele.id}\nvalue_area: ${ele.value_area}\nvalue_bar: ${ele.value_bar}`}</title>
       <style jsx>{`
         rect:hover {
           fill-opacity: 0.5;

@@ -1,6 +1,6 @@
 import { areaYAxis, barYAxis } from '@/constants/axis';
 import useViewSize from '@/hooks/useViewSize';
-import { data } from '@/utils/ChartData';
+import { chartData } from '@/utils/ChartData';
 
 interface YAxisProps {
   isLeft: boolean;
@@ -9,11 +9,11 @@ interface YAxisProps {
 const YAxis = ({ isLeft }: YAxisProps) => {
   const [viewwWidth, viewHeight] = useViewSize();
   const yCoordinate = isLeft
-    ? ((viewHeight * 0.8) / data.getBarMaxValue()) * 1000 - 30
-    : (viewHeight * 0.4) / data.getAreaMaxValue() - 1;
+    ? ((viewHeight * 0.8) / chartData.getBarMaxValue()) * 1000 - 30
+    : (viewHeight * 0.4) / chartData.getAreaMaxValue() - 1;
 
   const yAxisList = isLeft ? barYAxis : areaYAxis;
-  
+
   return (
     <div style={{ height: isLeft ? '80vh' : '40vw' }}>
       {yAxisList.map((axios, idx) => (

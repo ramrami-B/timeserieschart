@@ -3,7 +3,7 @@ import { DataType } from '@/@types/DataType';
 const dataObj = require('../../public/data/data.json');
 const dataList: DataType[] = Object.values(dataObj);
 
-class ChartData {
+export class ChartData {
   get() {
     return dataList
   }
@@ -37,4 +37,4 @@ class ChartData {
   }
 }
 
-export const data = new ChartData();
+export const chartData = new ChartData();

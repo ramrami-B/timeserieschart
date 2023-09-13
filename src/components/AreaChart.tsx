@@ -7,7 +7,7 @@ const AreaChart = () => {
   const pointList = points.split(' ');
 
   return (
-    <>
+    <svg>
       <polygon points={points} fill={colors.dark} fillOpacity="0.9" />
       {pointList.map((point, idx) => {
         const cx = point.split(',')[0];
@@ -29,7 +29,7 @@ const AreaChart = () => {
           }
         `}
       </style>
-    </>
+    </svg>
   );
 };
 

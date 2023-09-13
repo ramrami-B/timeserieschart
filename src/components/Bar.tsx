@@ -16,7 +16,7 @@ const Bar = ({ idx, highlight }: BarProps) => {
     ((viewHeight * 0.8) / data.getBarMaxValue()) * data.get()[idx].value_bar;
 
   return (
-    <>
+    <svg>
       <rect
         x={idx * eleWidth + idx}
         y={viewHeight * 0.8 - barHeight}
@@ -30,7 +30,7 @@ const Bar = ({ idx, highlight }: BarProps) => {
           fill-opacity: 0.5;
         }
       `}</style>
-    </>
+    </svg>
   );
 };
 

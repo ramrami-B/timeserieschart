@@ -20,7 +20,6 @@ export default function Home() {
           flex-direction: column;
           align-items: center;
         }
-
         .table {
           width: 90vw;
           height: 80vh;

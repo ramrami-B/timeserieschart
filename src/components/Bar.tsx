@@ -8,16 +8,15 @@ interface BarProps {
 }
 
 const Bar = ({ idx, value }: BarProps) => {
-  const [viewwWidth, viewHeight] = useViewSize();
+  const [viewwWidth, viewHeight, eleWidth] = useViewSize();
 
   const barHeight = ((viewHeight * 0.8) / data.getBarMaxValue()) * value;
-  const barWeight = (viewwWidth * 0.9 - data.getLength()) / data.getLength();
 
   return (
     <rect
-      x={idx * barWeight + idx}
+      x={idx * eleWidth + idx}
       y={viewHeight * 0.8 - barHeight}
-      width={barWeight}
+      width={eleWidth}
       height={barHeight}
       fill={colors.light}
     />
